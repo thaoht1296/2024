@@ -138,6 +138,8 @@ int main(int argc, char* argv[]) {
 	else if (magic == 0x10b) {
 		printf("32 bit \n");
 	}
+
+	//test
 	
 	return 0;
 }
