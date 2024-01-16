@@ -199,7 +199,7 @@ BOOL VerifyEmbeddedSignature(LPCWSTR pwszSourceFile)
 
 int main()
 {
-	LPCWSTR file = L"C:\\Users\\thaoht29\\Documents\\Untitled1.cpp";
+	LPCWSTR file = L"C:\\Program Files\\Git\\git-bash.exe";
 	
     if(file != NULL)
     {
