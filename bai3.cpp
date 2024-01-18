@@ -119,15 +119,11 @@ int main(int argc, char* argv[]) {
 
 
 	printf("\n******* Thong tin tong quan *******\n");
-	DWORD char1 = (DWORD)imageNTHeaders->FileHeader.Characteristics;
-	DWORD dll = char1&IMAGE_FILE_DLL;
-	
-	
-	if (dll == 0) {
-		printf("File EXE \n");
+	if (imageNTHeaders->FileHeader.Characteristics & IMAGE_FILE_DLL) {
+		printf("File dll \n");
 	}
-	else {
-		printf("File DLL \n");
+	else if (imageNTHeaders->FileHeader.Characteristics & IMAGE_FILE_EXECUTABLE_IMAGE) {
+		printf("File exe \n");
 	}
 
 	WORD magic = (WORD)imageNTHeaders->OptionalHeader.Magic;
@@ -138,8 +134,6 @@ int main(int argc, char* argv[]) {
 	else if (magic == 0x10b) {
 		printf("32 bit \n");
 	}
-
-	//test
 	
 	return 0;
 }
